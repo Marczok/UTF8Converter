@@ -6,6 +6,11 @@ namespace UTF8Converter
 {
   class Program
   {
+    /// <summary>
+    /// https://stackoverflow.com/q/4520184
+    /// </summary>
+    /// <param name="srcFile"></param>
+    /// <returns></returns>
     public static Encoding GetFileEncoding(string srcFile)
     {
       // *** Use Default of Encoding.Default (Ansi CodePage)
@@ -36,6 +41,11 @@ namespace UTF8Converter
       return enc;
     }
 
+    /// <summary>
+    /// https://stackoverflow.com/a/7102180
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
     public static string ReadFileAsUtf8(string fileName)
     {
       Encoding encoding = Encoding.Default;
@@ -87,10 +97,6 @@ namespace UTF8Converter
               process.Kill();
             }
           }
-
-
-          //string s = File.ReadAllText(f.FullName);
-          //File.WriteAllText (f.FullName, s, Encoding.UTF8);
         }
 
         Console.WriteLine($"Non utf8:{nonUtf}, utf8:{utf8}");
