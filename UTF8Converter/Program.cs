@@ -29,9 +29,9 @@ namespace UTF8Converter
     static void Main(string[] args)
     {
 
-      if (args.Length == 1)
+      if (args.Length == 2)
       {
-        foreach (var f in new DirectoryInfo($@"{args[0]}").GetFiles("*.cs", SearchOption.AllDirectories))
+        foreach (var f in new DirectoryInfo($@"{args[0]}").GetFiles($@"{args[1]}", SearchOption.AllDirectories))
         {
           try
           {
@@ -56,7 +56,9 @@ namespace UTF8Converter
       }
       else
       {
-        Console.WriteLine("Pass root directory of your project you would like to convert as a parameter");
+        Console.WriteLine("Two parameters are needed!");
+        Console.WriteLine("1: Root directory of your project you would like to convert");
+        Console.WriteLine("2: Filemask e.g. *.cs");
       }
     }
   }
